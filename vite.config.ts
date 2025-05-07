@@ -16,6 +16,7 @@ export default defineConfig({
           "react": ["react", "react-dom"],
           "react-router": ["react-router"],
           "cn": ["clsx", "tailwind-merge"],
+          "headlessui": ["@headlessui/react"],
           "tone": ["tone"]
         }
       }
