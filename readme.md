@@ -53,7 +53,7 @@ Each experiment lives in its own route and may be extended with unique UI contro
 
 ### Prerequisites
 
-- Node.js (v18+ recommended)
+- Node.js (v20+ recommended)
 - A modern browser (Chrome, Firefox, Edge)
 
 ### Installation
