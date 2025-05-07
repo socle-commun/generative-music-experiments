@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
-  width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 200 200">
+  width="32" height="32" viewBox="0 0 200 200">
   <defs>
     <linearGradient id="gradient" x1="0%" x2="100%" y1="0%" y2="100%">
-      <stop offset="0%" stopColor="oklch(54.6% 0.245 262.881)"></stop>
-      <stop offset="100%" stopColor="oklch(70.7% 0.165 254.624)"></stop>
+      <stop offset="0%" stopColor="#155dfc"></stop>
+      <stop offset="100%" stopColor="#51a2ff"></stop>
     </linearGradient>
   </defs>
   <path fill="url(#gradient)" transform="translate(100 100)"

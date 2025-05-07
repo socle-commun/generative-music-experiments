@@ -51,15 +51,14 @@ export default function ColorModeToggle() {
   return (
     <div className="w-52">
       <Menu>
-        <MenuButton className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md cursor-pointer bg-gray-200 dark:bg-gray-800 font-semibold text-black dark:text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-black data-hover:bg-gray-300 data-open:bg-gray-300 dark:data-focus:outline-white dark:data-hover:bg-gray-700 dark:data-open:bg-gray-700">
-          <span className="size-4 fill-black/60 dark:fill-white/60">{modes.find((mode) => mode.value === colorMode)?.icon}</span>
-          {/* <ChevronDownIcon className="size-4 fill-black/60 dark:fill-white/60" /> */}
+        <MenuButton className={cn("inline-flex items-center gap-2 px-3 py-1.5 rounded-md cursor-pointer bg-gray-200 dark:bg-gray-800 font-semibold text-black dark:text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-black data-hover:bg-gray-300 data-open:bg-gray-300 dark:data-focus:outline-white dark:data-hover:bg-gray-700 dark:data-open:bg-gray-700")}>
+          <span className={cn("size-4 fill-black/60 dark:fill-white/60")}>{modes.find((mode) => mode.value === colorMode)?.icon}</span>
         </MenuButton>
 
         <MenuItems
           transition
           anchor="bottom end"
-          className="origin-top-right inline-flex gap-1 p-1 text-sm/6 rounded-xl border border-black/5 bg-black/5 text-black dark:border-white/5 dark:bg-white/5 dark:text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0"
+          className={cn("origin-top-right inline-flex gap-1 p-1 text-sm/6 rounded-xl border border-black/5 bg-black/5 text-black dark:border-white/5 dark:bg-white/5 dark:text-white transition duration-100 ease-out [--anchor-gap:--spacing(1)] focus:outline-none data-closed:scale-95 data-closed:opacity-0")}
         >
           {modes.map((mode, index) => (
             <MenuItem key={mode.value}>
@@ -73,7 +72,7 @@ export default function ColorModeToggle() {
                   colorMode === mode.value && "bg-black/10 dark:bg-white/10"
                 )}
               >
-                <span className="size-4 fill-black/30 dark:fill-white/30">
+                <span className={cn("size-4 fill-black/30 dark:fill-white/30")}>
                   {mode.icon}
                 </span>
               </button>
