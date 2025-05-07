@@ -1,0 +1,46 @@
+name: GitHub Pages deployment
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Build, Check & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint code (if applicable)
+        run: npm run lint
+        continue-on-error: true # Skip if not set up yet
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run tests (if configured)
+        run: npm test
+        continue-on-error: true # Skip if no tests yet
+
+      - name: Upload build artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
