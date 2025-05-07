@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <AppProviders>
-      <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/generative-music-experiments/" : "/"}>
+      <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/generative-music-experiments" : "/"}>
         <Routes>
 
           <Route path="" element={<RootLayout />}>
