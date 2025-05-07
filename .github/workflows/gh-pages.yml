@@ -1,10 +1,9 @@
-name: GitHub Pages deployment
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main # or 'master' depending on your default branch
 
 permissions:
   contents: read
@@ -17,7 +16,6 @@ concurrency:
 
 jobs:
   deploy:
-    name: Build, Check & Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -27,28 +25,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: 18
           cache: "npm"
 
       - name: Install dependencies
         run: npm install
 
-      - name: Lint code (if applicable)
-        run: npm run lint
-        continue-on-error: true # Skip if not set up yet
+      - name: Build the project
+        run: |
+          npm run build
+        env:
+          BASE_URL: /<REPO_NAME>/ # Required if using Vite's base setting
 
-      - name: Build project
-        run: npm run build
-
-      - name: Run tests (if configured)
-        run: npm test
-        continue-on-error: true # Skip if no tests yet
-
-      - name: Upload build artifact
-        if: success()
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: dist
 
       - name: Deploy to GitHub Pages
