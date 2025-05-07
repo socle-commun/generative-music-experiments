@@ -15,7 +15,8 @@ export default defineConfig({
         manualChunks: {
           "react": ["react", "react-dom"],
           "react-router": ["react-router"],
-          "cn": ["clsx", "tailwind-merge"]
+          "cn": ["clsx", "tailwind-merge"],
+          "tone": ["tone"]
         }
       }
     },
