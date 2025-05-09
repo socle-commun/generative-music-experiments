@@ -5,6 +5,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import SunIcon from "@heroicons/react/20/solid/SunIcon";
 import MoonIcon from "@heroicons/react/20/solid/MoonIcon";
 import ComputerDesktopIcon from "@heroicons/react/20/solid/ComputerDesktopIcon";
+import ChevronDownIcon from "@heroicons/react/20/solid/ChevronDownIcon";
 
 import cn from "@/utilities/cn";
 
@@ -49,10 +50,15 @@ export default function ColorModeToggle() {
   }, [colorMode]);
 
   return (
-    <div className="w-52">
+    <div className="w-content">
       <Menu>
         <MenuButton className={cn("inline-flex items-center gap-2 px-3 py-1.5 rounded-md cursor-pointer bg-gray-200 dark:bg-gray-800 font-semibold text-black dark:text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-black data-hover:bg-gray-300 data-open:bg-gray-300 dark:data-focus:outline-white dark:data-hover:bg-gray-700 dark:data-open:bg-gray-700")}>
-          <span className={cn("size-4 fill-black/60 dark:fill-white/60")}>{modes.find((mode) => mode.value === colorMode)?.icon}</span>
+          <span className={cn("size-4 fill-black/60 dark:fill-white/60")}>
+            {modes.find((mode) => mode.value === colorMode)?.icon}
+          </span>
+          <span className={cn("size-4 fill-black/60 dark:fill-white/60")}>
+            <ChevronDownIcon/>
+          </span>
         </MenuButton>
 
         <MenuItems

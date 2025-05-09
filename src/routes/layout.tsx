@@ -10,6 +10,7 @@ import TopBarNavLink from "@/components/navigation/TopBarLink";
 import Brand from "@/components/global/Brand";
 
 import cn from "@/utilities/cn";
+import ColorModeToggle from "@/components/global/ColorModeToggle";
 
 export default function RootLayout() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +27,7 @@ export default function RootLayout() {
           <AdjustmentsHorizontalIcon className={cn("size-4")} />
           <span>Settings</span>
         </TopBarNavLink>
+        <ColorModeToggle />
       </ResponsiveTopBar>
 
       <Outlet />
