@@ -5,7 +5,7 @@ import cn from "@/utilities/cn";
 export default function RootPage() {
   return (
     <>
-      <h1>Welcome</h1>
+      <h1 className={cn("")}>Welcome</h1>
       {
         experiments.map((experiment) => (
           <div key={experiment.id} className={cn("mb-4")}>
