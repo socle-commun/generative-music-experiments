@@ -28,6 +28,7 @@ export default function ExperimentsIdPage() {
           <p className={cn("")}>
             {experiment.description}
           </p>
+          <experiment.component />
         </div>
       </>
     )

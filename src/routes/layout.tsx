@@ -8,9 +8,9 @@ import ResponsiveTopBar from "@/components/navigation/ResponsiveTopBar";
 import TopBarNavLink from "@/components/navigation/TopBarLink";
 
 import Brand from "@/components/global/Brand";
+import ColorModeToggle from "@/components/global/ColorModeToggle";
 
 import cn from "@/utilities/cn";
-import ColorModeToggle from "@/components/global/ColorModeToggle";
 
 export default function RootLayout() {
   const [isOpen, setIsOpen] = useState(false);
